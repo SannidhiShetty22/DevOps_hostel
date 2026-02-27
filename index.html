@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Complaint Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+                <h1 style="margin: 0; font-size: 24px;">📋 Student Complaint Management System</h1>
+                <p style="margin: 5px 0 0 0; color: #666; font-size: 13px;" id="studentInfo"></p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="studentLogout()" style="padding: 10px 20px; background: #ff6b6b; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">🚪 Logout</button>
+                <a href="admin-login.html" style="padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; display: flex; align-items: center;">🔐 Admin Portal</a>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Add New Complaint</h2>
+            <form onsubmit="addComplaint(event)">
+                <input type="text" id="complaintText" placeholder="Complaint Description" required />
+                
+                <select id="category">
+                    <option value="Food">Food Quality</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Hygiene">Hygiene</option>
+                    <option value="Noise">Noise Disturbance</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Normal">Normal Priority</option>
+                    <option value="High">High Priority</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </div>
+
+        <div class="complaints-section">
+            <h2>All Complaints</h2>
+            <div id="complaintList" class="complaint-list"></div>
+        </div>
+    </div>
+
+    <script src="auth-script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
